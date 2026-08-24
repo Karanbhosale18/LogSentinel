@@ -1,0 +1,58 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: smart-log-analyzer
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/loganalyzer}
+    username: ${SPRING_DATASOURCE_USERNAME:loganalyzer}
+    password: ${SPRING_DATASOURCE_PASSWORD:loganalyzer}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: false
+
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+app:
+  seed:
+    enabled: ${APP_SEED_ENABLED:true}
+
+  cors:
+    allowed-origins: ${APP_CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,https://logsentinel-7uz1.onrender.com}
+
+  auth:
+    username: ${ADMIN_USERNAME:admin}
+    password: ${ADMIN_PASSWORD:admin}
+
+  detector:
+    threshold: 0.70
+    weight-rarity: 0.85
+    weight-source: 0.85
+    weight-severity: 0.30
+    weight-burst: 0.45
+    rarity-common-prob: 0.05
+    rarity-rare-prob: 0.001
+    volume-sigma-low: 3.0
+    volume-sigma-high: 10.0
+    burst-window-seconds: 600
+    burst-min-events: 3
+
+  ai:
+    provider: ${AI_PROVIDER:openai}
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      base-url: ${AI_BASE_URL:https://api.openai.com/v1}
+      model: ${AI_MODEL:gpt-4o-mini}
+      timeout-seconds: ${AI_TIMEOUT:30}
