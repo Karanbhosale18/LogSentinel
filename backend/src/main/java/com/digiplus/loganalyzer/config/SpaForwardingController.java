@@ -18,7 +18,7 @@ public class SpaForwardingController {
      * Match any path that is NOT an API call, a known backend endpoint, or a
      * static file (by extension), and forward it to the SPA entry point.
      */
-    @GetMapping(value = { "/", "/{path:^(?!api|hello).*$}/**" })
+    @GetMapping(value = { "/", "/{path:^(?!api|assets|index\\.html|favicon\\.ico).*$}/**" })
     public String forward() {
         return "forward:/index.html";
     }
