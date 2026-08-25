@@ -1,6 +1,7 @@
 # Smart Log Analyzer & Anomaly Detector
 
 **🔴 Live demo:** [logsentinel-7uz1.onrender.com](https://logsentinel-7uz1.onrender.com/)
+
 username : admin
 password : admin
 > Hosted on Render's free tier — if the app has been idle, the first request may take 30–60 seconds while the instance spins back up.
