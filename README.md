@@ -1,5 +1,8 @@
 # Smart Log Analyzer & Anomaly Detector
 
+**🔴 Live demo:** [logsentinel-7uz1.onrender.com](https://logsentinel-7uz1.onrender.com/)
+> Hosted on Render's free tier — if the app has been idle, the first request may take 30–60 seconds while the instance spins back up.
+
 A full-stack application that ingests web-server access logs, flags unusual
 entries using its **own** statistical anomaly-detection algorithm, persists every
 flagged entry with a reason and a score, and then uses an LLM **only** to turn
@@ -116,6 +119,11 @@ To build and run locally you need:
 ---
 
 ## Quick start
+
+Want to try it without setting anything up? Use the live demo:
+**https://logsentinel-7uz1.onrender.com/**
+
+To run it locally instead:
 
 ### 1. Start PostgreSQL
 
